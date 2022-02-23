@@ -63,10 +63,10 @@ function App() {
 
   return (
     <div className="text-white bg-[#282c34]">
-      <header className="flex flex-col justify-center items-center p-16">
+      <header className="flex flex-col justify-center items-center p-16 max-w-screen-sm mx-auto">
         <h1 className="">Wordle Solver</h1>
       </header>
-      <main className="m-0">
+      <main className="my-0 max-w-screen-sm mx-auto">
         <ContextAbsent.Provider value={{ absentList, setAbsentList }}>
           <ContextPresent.Provider value={{ presentList, setPresentList }}>
             <ContextConfirmed.Provider value={letters}>

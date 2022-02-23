@@ -16,7 +16,7 @@ const TextInput = ({
 
   return (
     <input
-      className="max-w-[100px] p-2 text-black text-5xl text-center"
+      className="w-1/5 p-2 text-black text-3xl text-center"
       onChange={handleChange}
       type="text"
       value={value}

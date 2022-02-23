@@ -21,90 +21,66 @@ const WordList = ({
   absentList,
   presentList,
 }: WordListProps) => {
-  const [wordList, setWordList] = React.useState(words);
+  const wordList = words.filter((word) => {
+    if (
+      absentList.length === 0
+      && presentList.length === 0
+      && firstLetter === ''
+      && secondLetter === ''
+      && thirdLetter === ''
+      && fourthLetter === ''
+      && fifthLetter === ''
+    ) {
+      return true;
+    }
 
-  React.useEffect(
-    () => {
-      // filter the words based on the given inputs
-      const newWordList = wordList.filter((word) => {
-        const letterArray = Array.from(word.toUpperCase());
+    let hasAbsents = false;
+    let hasPresents = true;
+    let hasFirst = true;
+    let hasSecond = true;
+    let hasThird = true;
+    let hasFourth = true;
+    let hasFifth = true;
 
-        const containsAbsents = letterArray.filter((letter: string) => {
-          return absentList.includes(letter);
-        });
+    const letterArray = Array.from(word.toUpperCase());
 
-        console.log({
-          word,
-          letterArray,
-          absentList,
-          containsAbsents,
-        });
+    if (absentList.length > 0) {
+      hasAbsents = letterArray.some(letter => absentList.includes(letter));
+    }
 
-        // const hasPresents = letterArray.filter((letter: string) => {
-        //   return presentList.includes(letter);
-        // });
+    if (presentList.length > 0) {
+      hasPresents = presentList.every(letter => letterArray.includes(letter));
+    }
 
-        // const hasConfirmed = letterArray.filter((letter: string) => {
-        //   const wordLetterIndex = word.indexOf(letter);
-        //   console.log({
-        //     wordLetterIndex,
-        //     firstLetter,
-        //     secondLetter,
-        //     thirdLetter,
-        //     fourthLetter,
-        //     fifthLetter,
-        //   });
+    if (firstLetter !== '') {
+      hasFirst = firstLetter === letterArray[0];
+    }
 
-        //   switch (wordLetterIndex) {
-        //     case 0:
-        //       return firstLetter === letter;
-        //     case 1:
-        //       return secondLetter === letter;
-        //     case 2:
-        //       return thirdLetter === letter;
-        //     case 3:
-        //       return fourthLetter === letter;
-        //     case 4:
-        //       return fifthLetter === letter;
-        //     default:
-        //       return false;
-        //   }
-        // });
+    if (secondLetter !== '') {
+      hasSecond = secondLetter === letterArray[1];
+    }
 
-        return containsAbsents.length === 0
-        // hasConfirmed.length > 0;
+    if (thirdLetter !== '') {
+      hasThird = thirdLetter === letterArray[2];
+    }
 
-        // containsAbsents.length === 0
-          // && hasPresents.length > 0
-          // && hasConfirmed.length > 0;
-      });
+    if (fourthLetter !== '') {
+      hasFourth = fourthLetter === letterArray[3];
+    }
 
-      console.log({
-        newWordList,
-        wordList,
-      });
+    if (fifthLetter !== '') {
+      hasFifth = fifthLetter === letterArray[4];
+    }
 
-      if (newWordList !== wordList) {
-        setWordList(newWordList);
-      }
-    },
-    [
-      firstLetter,
-      secondLetter,
-      thirdLetter,
-      fourthLetter,
-      fifthLetter,
-      absentList,
-      presentList,
-    ],
-  );
+    return !hasAbsents && hasPresents && hasFirst && hasSecond && hasThird && hasFourth && hasFifth;
+  });
 
   return (
     <section className="text-center">
       <h2 className="p-4">Potential Words</h2>
       <ul className="grid grid-cols-4 text-left text-xl p-8">
       {
-        words.map((word, index) => (
+        wordList.map((word, index) => (
           <li key={index}>{word}</li>
         ))
       }

@@ -27,12 +27,11 @@ const Confirmed = ({
   fifthLetter,
   setFifthLetter,
 }: ConfirmedProps) => {
-
   return (
     <section className="text-center">
       <h2 className="">Correct letters</h2>
-      <p className="">Enter correct letters in the field corresponding with it's place in the word.</p>
-      <div className="flex gap-8 p-8 justify-center">
+      <p className="">Enter correct letters in the fields below.</p>
+      <div className="flex gap-4 p-8 justify-center">
         <TextInput onChange={setFirstLetter} value={firstLetter} />
         <TextInput onChange={setSecondLetter} value={secondLetter} />
         <TextInput onChange={setThirdLetter} value={thirdLetter} />

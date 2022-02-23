@@ -20,7 +20,7 @@ const LetterButton = ({
     if (letters.includes(letter)) {
       setColorClass('bg-wordleGreen');
     }
-  }, [letters]);
+  }, [letter, letters]);
 
   const handleClick = React.useCallback(() => {
     if (clickNumber === 2) {
@@ -62,10 +62,10 @@ const LetterButton = ({
       // add letter to absentList
       setAbsentList(prevAbsentList => prevAbsentList.concat(letter));
     }
-  }, [clickNumber]);
+  }, [clickNumber, letter, setAbsentList, setPresentList]);
 
   return (
-    <button className={`${colorClass} p-6 h-20 w-20`} onClick={handleClick}>{letter}</button>
+    <button className={`${colorClass} px-3 py-1 rounded flex align-middle items-center content-center justify-center flex-1 cursor-pointer max-w-[32px]`} onClick={handleClick}>{letter}</button>
   );
 };
 

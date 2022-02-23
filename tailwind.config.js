@@ -12,6 +12,9 @@ module.exports = {
         wordleGreen: '#6aaa64',
         wordleDarkgreen: '#538d4e',
       },
+      maxWidth: {
+        screenXs: '414px',
+      },
     },
   },
   plugins: [],
