@@ -29,9 +29,11 @@ const Confirmed = ({
 }: ConfirmedProps) => {
   return (
     <section className="text-center">
-      <h2 className="">Correct letters</h2>
-      <p className="">Enter correct letters in the fields below.</p>
-      <div className="flex gap-4 p-8 justify-center">
+      <div className="pb-4">
+        <h2 className="">Correct letters</h2>
+        <p className="">Enter correct letters in the fields below.</p>
+      </div>
+      <div className="flex gap-4 pb-8 justify-center">
         <TextInput onChange={setFirstLetter} value={firstLetter} />
         <TextInput onChange={setSecondLetter} value={secondLetter} />
         <TextInput onChange={setThirdLetter} value={thirdLetter} />

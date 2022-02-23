@@ -77,8 +77,8 @@ const WordList = ({
 
   return (
     <section className="text-center">
-      <h2 className="p-4">Potential Words</h2>
-      <ul className="grid grid-cols-4 text-left text-xl p-8">
+      <h2>Potential Words</h2>
+      <ul className="grid grid-cols-4 text-left text-xl pb-8">
       {
         wordList.map((word, index) => (
           <li key={index}>{word}</li>

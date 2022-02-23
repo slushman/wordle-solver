@@ -11,9 +11,10 @@ module.exports = {
         wordleDarkyellow: '#b59f3b',
         wordleGreen: '#6aaa64',
         wordleDarkgreen: '#538d4e',
+        wordleBlack: '#121213',
       },
       maxWidth: {
-        screenXs: '414px',
+        'screen-xs': '414px',
       },
     },
   },

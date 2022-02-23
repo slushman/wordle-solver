@@ -14,9 +14,11 @@ const TextInput = ({
     onChange(caps);
   };
 
+  const bgColor = value ? 'bg-wordleGreen' : 'bg-wordleBlack';
+
   return (
     <input
-      className="w-1/5 p-2 text-black text-3xl text-center"
+      className={`w-1/5 p-2 text-white text-3xl text-center border-solid border-wordleGray border-2 ${bgColor}`}
       onChange={handleChange}
       type="text"
       value={value}

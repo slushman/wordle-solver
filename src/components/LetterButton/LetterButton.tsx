@@ -20,6 +20,10 @@ const LetterButton = ({
     if (letters.includes(letter)) {
       setColorClass('bg-wordleGreen');
     }
+
+    if (!letters.includes(letter)) {
+      setColorClass('bg-wordleGray');
+    }
   }, [letter, letters]);
 
   const handleClick = React.useCallback(() => {
