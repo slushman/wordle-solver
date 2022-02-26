@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Confirmed from '../Confirmed';
+import Footer from '../Footer';
 import Letters from '../Letters';
 import WordList from '../WordList';
 
@@ -96,6 +97,7 @@ function App() {
            presentList={presentList}
         />
       </main>
+      <Footer />
     </div>
   );
 }
