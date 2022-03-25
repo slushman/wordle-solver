@@ -4,10 +4,10 @@ const Logo = () => (
   <svg className="w-24 grayscale brightness-[1000]" viewBox="0 0 750.3 151.2" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="a" x1="50%" y1="0%" x2="50%" y2="100%">
-        <stop offset="0%" stop-color="#023451">
+        <stop offset="0%" stopColor="#023451">
           <animate attributeName="stop-color" values="#023451; #1C9DE8; #023451" dur="5s" repeatCount="indefinite"/>
         </stop>
-        <stop offset="100%" stop-color="#1C9DE8">
+        <stop offset="100%" stopColor="#1C9DE8">
           <animate attributeName="stop-color" values="#1C9DE8; #023451; #1C9DE8" dur="5s" repeatCount="indefinite"/>
         </stop>
       </linearGradient>

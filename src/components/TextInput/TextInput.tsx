@@ -1,17 +1,19 @@
 import * as React from 'react';
 
 interface TextInputProps {
-  onChange: (newValue: string) => void;
+  index: number;
+  onChange: (newValue: string, index: number) => void;
   value: string;
 }
 
 const TextInput = ({
+  index,
   onChange,
   value,
 }: TextInputProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const caps = event.target.value.toUpperCase();
-    onChange(caps);
+    onChange(caps, index);
   };
 
   const bgColor = value ? 'bg-wordleGreen' : 'bg-wordleBlack';
