@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ChangeEvent } from 'react';
 
 interface TextInputProps {
   index: number;
@@ -6,12 +6,8 @@ interface TextInputProps {
   value: string;
 }
 
-const TextInput = ({
-  index,
-  onChange,
-  value,
-}: TextInputProps) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+export default function TextInput({ index, onChange, value }: TextInputProps) {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const caps = event.target.value.toUpperCase();
     onChange(caps, index);
   };
@@ -26,6 +22,4 @@ const TextInput = ({
       value={value}
     />
   );
-};
-
-export default React.memo(TextInput);
+}
